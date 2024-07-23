@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&Inter:wght@300;400;500;600;700;800&family=Mulish:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary--color: #034d36;
+  --text-color: #343434;
+  --primary-font: "Archivo", sans-serif;
+  --secondary-font: "Mulish", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+a:hover,
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--primary-font);
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+  font-weight: 600;
+}
+
+figure {
+  margin: 0;
+}
+/* Default CSS */
+
+.job-item {
+  position: relative;
+  width: 100%;
+  padding: 25px;
+  border-radius: 2px;
+  background-color: #f1f1f1;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.job-img > a {
+  display: block;
+}
+
+.job-img img {
+  width: 55px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.company-name {
+  display: block;
+  color: #1c4a36;
+  font-size: 15px;
+}
+
+.job-item h3 {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  color: #1c4a36;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.job-item h3 a {
+  color: var(--primary--color);
+}
+
+.job-details {
+  color: #686868;
+  margin-top: 20px;
+}
+
+.job-details p {
+  font-family: "Inter", sans-serif;
+  color: #686868;
+  line-height: 23px;
+  font-weight: 400;
+  margin-right: 5px;
+  padding-right: 5px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.job-item .btn {
+  margin-top: 20px;
+}
+
+.partTime {
+  position: absolute;
+  left: auto;
+  top: 10px;
+  right: 10px;
+  bottom: auto;
+  padding: 4px 8px;
+  border-radius: 2px;
+  background-color: #e4f5ee;
+  color: #1c4a36;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.partTime.featured {
+  left: 10px;
+  top: 10px;
+  right: auto;
+  bottom: auto;
+  background-color: #f5e4f4;
+  color: #611a2c;
+}
+
+.breadcrumb > li > a {
+  color: #111;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+.breadcrumb li:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  margin: 0 12px;
+  width: 4px;
+  height: 7px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgNCA3IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAuMTM3MzI0IDYuODYyOTFDMC4zMTk3OTggNy4wNDU3IDAuNjEzOTkxIDcuMDQ1NyAwLjc5NjQ2NSA2Ljg2MjkxTDMuODkxMDcgMy43NjI5OUM0LjAzNjMxIDMuNjE3NTEgNC4wMzYzMSAzLjM4MjQ5IDMuODkxMDcgMy4yMzcwMUwwLjc5NjQ2NSAwLjEzNzA5QzAuNjEzOTkxIC0wLjA0NTY5NjYgMC4zMTk3OTkgLTAuMDQ1Njk2NiAwLjEzNzMyNCAwLjEzNzA5Qy0wLjA0NTE0OTMgMC4zMTk4NzcgLTAuMDQ1MTQ5MyAwLjYxNDU3NSAwLjEzNzMyNCAwLjc5NzM2MkwyLjgzMzQ3IDMuNTAxODdMMC4xMzM2MDEgNi4yMDYzN0MtMC4wNDUxNDkzIDYuMzg1NDIgLTAuMDQ1MTQ5OCA2LjY4Mzg1IDAuMTM3MzI0IDYuODYyOTFaIiBmaWxsPSIjOTA5MDkxIi8+Cjwvc3ZnPgo=");
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-primary {
+    color: #01615B;
+  }
+  .bg-primary-light {
+    background-color: rgba(1, 97, 91, 0.05);
+  }
+  .text-dark {
+    color: #111;
+  }
+  .text-muted {
+    color: #484848;
+  }
+  .bg-saveJob {
+    background: rgba(25, 210, 118, 0.07);
+  }
+  .hover\:bg-saveJob:hover {
+    background: #01615B;
+  }
+}
+
+.single__banner {
+  @apply bg-primary-light;
+}
+
+.single__banner h1 {
+  @apply text-[26px] text-primary font-semibold mb-[10px];
+}
+
+.job-data > span {
+  @apply flex items-center mr-3 text-sm text-muted;
+}
+
+.job-data > span svg {
+  @apply mr-1 text-primary;
+}
+
+.the-content,
+.the-content p {
+  @apply text-[18px] leading-8 text-muted mb-4;
+}
+
+.the-content h1,
+.the-content h2,
+.the-content h3,
+.the-content h4,
+.the-content h5,
+.the-content h6 {
+  @apply font-semibold font-heading text-dark mb-3 text-xl;
+}
+
+.the-content h2 {
+  @apply text-3xl;
+}
+
+.the-content h3 {
+  @apply text-2xl;
+}
+
+.the-content h4 {
+  @apply text-xl;
+}
+
+.the-content h5,
+.the-content h6 {
+  @apply text-lg;
+}
+
+.the-content ul {
+  @apply list-disc pl-[15px] mb-3 text-base;
+}
+
+.the-content ul li {
+  @apply mb-1;
+}
+
+.job-overview ul li {
+  @apply text-[15px] flex justify-between text-right;
+}
+
+.job-overview ul li strong {
+  @apply font-semibold text-left;
+  flex: 0 0 55%;
+}
+
+.find__job.different__location ul li span {
+  @apply text-right text-[13px];
+  flex: 0 0 45%;
+}
+
+.header-fixed {
+  @apply fixed w-full z-50 bg-white top-0 left-0;
+}
+
+.saveJob {
+  @apply flex h-[50px] w-[50px] leading-[50px] text-center justify-center items-center text-[16px] cursor-pointer text-primary bg-saveJob rounded-[7px] transition-all duration-300 flex-none;
+  @apply hover:bg-primary hover:text-white;
+}
+
+.cta-btn {
+  @apply small:fixed z-50 small:bottom-0 small:left-0 small:w-full small:bg-[#fafafa] small:py-3 small:text-center small:justify-center;
+}
+
+.cta-btn .btn {
+  @apply small:text-xs;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: #01615b;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 #01615b;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+  
+  .btn:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #111;
+  }
+  
+  .btn:active {
+    transform: scale(0.9);
+  }
+  
