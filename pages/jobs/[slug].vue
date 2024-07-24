@@ -14,7 +14,6 @@ console.log("Raw Data:", rawData);
     <div v-if="error">{{ error.message }}</div>
     <div v-else-if="pending">Loading...</div>
     <div v-else>
-
         <section class="single__section">
         <div class="container">
           <div class="breadcrumbs py-2">
@@ -103,19 +102,17 @@ console.log("Raw Data:", rawData);
                               <span>Location</span>
                             </li>
                             <li>
-                              <strong>Salary:</strong> {singleData.Salary}
+                              <strong>Salary:</strong> {{ jobs.Values.Salary }}
                             </li>
                             <li>
                               <strong>Gender:</strong>
                               <span>
-                                {singleData.Gender
-                                  ? singleData.Gender
-                                  : "Both Preferred"}
+                                {{ jobs.Values.Gender }}
                               </span>
                             </li>
                             <li>
                               <strong>Application Deadline:</strong>
-                              <span>{singleData.ExpiryDate}</span>
+                              <span>{{ jobs.Values.ExpiryDate }}</span>
                             </li>
                           </ul>
                         </div>
@@ -148,9 +145,9 @@ console.log("Raw Data:", rawData);
               </div>
       </section>
         <!-- Display your jobs data here -->
-        <h3>{{ jobs.Values.ComName }}</h3>
+        <!-- <h3>{{ jobs.Values.ComName }}</h3>
         
-        <pre>{{ jobs.Values }}</pre>
+        <pre>{{ jobs.Values }}</pre> -->
 
         
     </div>

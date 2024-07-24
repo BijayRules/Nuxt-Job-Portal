@@ -14,9 +14,8 @@ const getImageUrl = (job) => {
 </script>
 
 <template>
+    <Title>Test</Title>
     <div>
-
-
         <h1 class="mb-5 text-center text-2xl">All Job page</h1>
 
         <h1 v-if="error">{{ error.message }}</h1>
