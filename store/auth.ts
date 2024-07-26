@@ -28,7 +28,7 @@ export const useAuthStore = defineStore('auth', {
           const { code, message, response } = data.value;
 
           if (code === 200 && response?.token) {
-            const token = useCookie('token'); // useCookie new hook in Nuxt 3
+            const token = useCookie('gwt_token'); // useCookie new hook in Nuxt 3
             token.value = response.token; // Set token to cookie
             this.authenticated = true; // Set authenticated state value to true
             return { success: true, message, response }; // Return success response
