@@ -9,7 +9,7 @@ export const useAuthStore = defineStore('auth', {
   state: () => ({
     authenticated: false,
     loading: false,
-  }),
+  }), 
   actions: {
     async authenticateUser({ email, password }: UserPayloadInterface) {
       this.loading = true; // Set loading to true before the API call
@@ -24,19 +24,18 @@ export const useAuthStore = defineStore('auth', {
         });
 
         if (data.value) {
-          console.log('API Response:', data.value);
-          const { code, message, response } = data.value;
+          const { code, message, errors, response } = data.value;
 
           if (code === 200 && response?.token) {
             const token = useCookie('gwt_token'); // useCookie new hook in Nuxt 3
             token.value = response.token; // Set token to cookie
             this.authenticated = true; // Set authenticated state value to true
-            return { success: true, message, response }; // Return success response
+            return { success: true, message, errors, response }; // Return success response
           } else {
             return { success: false, message: error.value.data.message || 'Login failed.' }; // Return error message
           }
         } else {
-          return { success: false, message: 'Unexpected response structure.' }; // Handle unexpected response
+          return { success: false, message: error.value.data.message, errors:error.value.data.errors }; // Handle unexpected response
         }
       } catch (error) {
         console.error('Error during authentication:', error);
