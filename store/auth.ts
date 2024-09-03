@@ -15,7 +15,7 @@ export const useAuthStore = defineStore('auth', {
       this.loading = true; // Set loading to true before the API call
 
       try {
-        const { data }: any = await useFetch('https://genesisapi.popmanteau.com/api/v1/login', {
+        const { error, data }: any = await useFetch('https://genesisapi.popmanteau.com/api/v1/login', {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json' 
@@ -33,7 +33,7 @@ export const useAuthStore = defineStore('auth', {
             this.authenticated = true; // Set authenticated state value to true
             return { success: true, message, response }; // Return success response
           } else {
-            return { success: false, message: message || 'Login failed.' }; // Return error message
+            return { success: false, message: error.value.data.message || 'Login failed.' }; // Return error message
           }
         } else {
           return { success: false, message: 'Unexpected response structure.' }; // Handle unexpected response
@@ -47,7 +47,7 @@ export const useAuthStore = defineStore('auth', {
     },
 
     logUserOut() {
-      const token = useCookie('token'); // useCookie new hook in Nuxt 3
+      const token = useCookie('gwt_token'); // useCookie new hook in Nuxt 3
       token.value = null; // Clear the token cookie
       this.authenticated = false; // Set authenticated state value to false
       console.log('User logged out successfully');
