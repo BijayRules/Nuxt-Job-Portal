@@ -34,7 +34,7 @@ const login = async () => {
         if (response.success && response.response?.token) {
             successMessage.value = response.message; // Set success message from response
             setTimeout(() => {
-                router.push('/'); // Redirect to home after displaying success message
+                router.push('/dashboard'); // Redirect to home after displaying success message
             }, 1000); // Delay to show the success message
         } else {
             errorMessage.value = response.message || 'Login failed. Please check your credentials.';
