@@ -3,10 +3,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-    'nuxt-tiptap-editor',
   ],
-  tiptap: {
-    prefix: 'Tiptap', //prefix for Tiptap imports, composables not included
+  axios: {
+    baseURL: 'https://genesisapi.popmanteau.com/api/v1', // API base URL
   },
 
   devtools: {
